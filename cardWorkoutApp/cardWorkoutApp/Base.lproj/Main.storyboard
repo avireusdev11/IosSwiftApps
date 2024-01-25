@@ -35,6 +35,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButtonTapped:" destination="AbQ-Z4-rlD" eventType="touchUpInside" id="srS-Vy-BBp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avz-vi-kbk">
                                 <rect key="frame" x="71.666666666666686" y="636" width="115" height="55"/>
@@ -48,6 +51,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="restartButtonTapped:" destination="AbQ-Z4-rlD" eventType="touchUpInside" id="hpL-wF-JAi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mt-dy-ABJ">
                                 <rect key="frame" x="206.66666666666663" y="636" width="115" height="55"/>
@@ -61,6 +67,10 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rulesButtonTapped:" destination="AbQ-Z4-rlD" eventType="touchUpInside" id="SR8-Kn-Gg4"/>
+                                    <segue destination="JHd-zv-awc" kind="presentation" id="R2t-kM-y7B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ign-SA-G1u"/>
@@ -76,10 +86,64 @@
                             <constraint firstItem="NKW-R3-WV2" firstAttribute="centerX" secondItem="VUJ-y9-VU6" secondAttribute="centerX" id="lXO-wM-pq0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardselectionVC" destination="NKW-R3-WV2" id="JgK-1T-h7W"/>
+                        <outletCollection property="buttons" destination="HSj-Cm-rdX" collectionClass="NSMutableArray" id="50K-pG-KAj"/>
+                        <outletCollection property="buttons" destination="avz-vi-kbk" collectionClass="NSMutableArray" id="Bdb-0K-TED"/>
+                        <outletCollection property="buttons" destination="9Mt-dy-ABJ" collectionClass="NSMutableArray" id="i91-CG-5mO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAy-Jw-Tpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-129.00763358778624" y="1.4084507042253522"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XfT-w1-8y8">
+            <objects>
+                <viewController id="JHd-zv-awc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cyz-s9-O25">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZL-S4-csj">
+                                <rect key="frame" x="30" y="80" width="333" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The value of each card represent number of repetition for the exercise.  J=11, Q=12, K=13, A=14" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-dc-eP9">
+                                <rect key="frame" x="30" y="177" width="333" height="81.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♠️ = push ups  ❤️ = sit ups  ♦️ = Burpees  ♣️ = Jumping Jacks" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mc-C1-RAq">
+                                <rect key="frame" x="96.666666666666686" y="333.33333333333331" width="200" height="175.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UtW-JD-SPk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M4d-zl-gwV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M4d-zl-gwV" firstAttribute="trailing" secondItem="bXh-dc-eP9" secondAttribute="trailing" constant="30" id="LcV-G4-QzI"/>
+                            <constraint firstItem="1mc-C1-RAq" firstAttribute="centerY" secondItem="cyz-s9-O25" secondAttribute="centerY" id="XuP-zJ-Z0W"/>
+                            <constraint firstItem="bXh-dc-eP9" firstAttribute="leading" secondItem="M4d-zl-gwV" secondAttribute="leading" constant="30" id="bcR-2d-sxN"/>
+                            <constraint firstItem="M4d-zl-gwV" firstAttribute="trailing" secondItem="uZL-S4-csj" secondAttribute="trailing" constant="30" id="gtX-1j-C0m"/>
+                            <constraint firstItem="1mc-C1-RAq" firstAttribute="top" secondItem="bXh-dc-eP9" secondAttribute="bottom" constant="75" id="kGk-os-0Gc"/>
+                            <constraint firstItem="1mc-C1-RAq" firstAttribute="centerX" secondItem="cyz-s9-O25" secondAttribute="centerX" id="kJo-oF-IOV"/>
+                            <constraint firstItem="uZL-S4-csj" firstAttribute="top" secondItem="M4d-zl-gwV" secondAttribute="top" constant="80" id="qLG-g2-NhL"/>
+                            <constraint firstItem="uZL-S4-csj" firstAttribute="leading" secondItem="M4d-zl-gwV" secondAttribute="leading" constant="30" id="wue-X2-wKS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcn-FA-ob5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="1"/>
         </scene>
     </scenes>
     <resources>
