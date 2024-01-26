@@ -40,9 +40,10 @@ class cardSelectionVC: UIViewController {
     }
     
     @IBAction func restartButtonTapped(_ sender: UIButton) {
+        timer.invalidate()
+        startTimer()
     }
-    @IBAction func rulesButtonTapped(_ sender: UIButton) {
-    }
+ 
     /*
     // MARK: - Navigation
 
